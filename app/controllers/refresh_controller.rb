@@ -8,7 +8,7 @@ class RefreshController < ApplicationController
       raise JWTSession::Errors::Unathorized, "Somethings not right here!"
     end
 
-    response.set_cookie(JWTSession.access_cookiem
+    response.set_cookie(JWTSession.access_cookie,
                         value: tokens[:access],
                         httponly: true,
                         secure: Rails.env.production?)
